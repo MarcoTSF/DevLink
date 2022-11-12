@@ -12,7 +12,7 @@ export default function Private({ children }){
 
     useEffect( () => {
         async function checkLogin(){
-            const unsub = onAuthStateChanged(auth, () => {
+            const unsub = onAuthStateChanged(auth, (user) => {
                 if(user){
                     const userData = {
                         uid: user.uid,
