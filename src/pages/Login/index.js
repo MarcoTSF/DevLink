@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 import { toast } from 'react-toastify'
+import { Input } from '../../components/Input'
 
 
 export default function Login(){
@@ -41,14 +42,14 @@ export default function Login(){
             <Logo/>
 
             <form className='form' onSubmit={handleLogin}>
-                <input  
+                <Input  
                     value={email}
                     type="email"
                     placeholder='Digite seu email...'
                     onChange={ (event) => setEmail(event.target.value) }
                 />
 
-                <input 
+                <Input 
                     type="password"
                     placeholder='**************'
                     autoComplete='on'
