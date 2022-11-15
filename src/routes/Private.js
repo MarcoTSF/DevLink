@@ -4,7 +4,6 @@ import { auth } from '../services/firebaseConnection'
 import { onAuthStateChanged } from 'firebase/auth'
 
 import { Navigate } from 'react-router-dom'
-import { async } from '@firebase/util'
 
 export default function Private({ children }){
     const [loading, setLoading] = useState(true)
@@ -12,7 +11,7 @@ export default function Private({ children }){
 
     useEffect( () => {
         async function checkLogin(){
-            const unsub = onAuthStateChanged(auth, (user) => {
+            onAuthStateChanged(auth, (user) => {
                 if(user){
                     const userData = {
                         uid: user.uid,
